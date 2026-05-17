@@ -34,27 +34,35 @@ export const projects = [
   },
 
   {
-    id: 2,
-    slug: "Employee-management-microservices-platform",
-    title: "Employee Management Microservices Platform",
+  id: 2,
 
-    description:
-      "Microservices-based backend platform using Spring Cloud ecosystem and event-driven communication.",
+  slug: "employee-management-microservices-platform",
 
-    techStack: [
-      "Java 17",
-      "Spring Boot",
-      "Spring Cloud",
-      "Kafka",
-      "PostgreSQL",
-    ],
+  title: "Employee Management Microservices Platform",
 
-    highlights: [
-      "API Gateway integration",
-      "Service discovery",
-      "Centralized configuration",
-    ],
+  shortDescription:
+    "Microservices-based backend platform using Spring Cloud ecosystem and event-driven communication.",
 
-    githubUrl: "#",
-  },
+  fullDescription:
+    "Built a scalable employee management platform using microservices architecture with Spring Cloud components and distributed communication patterns.",
+
+  architecture:
+    "Services communicate through REST APIs and asynchronous event-driven messaging using Kafka with centralized configuration and API Gateway routing.",
+
+  techStack: [
+    "Java 17",
+    "Spring Boot",
+    "Spring Cloud",
+    "Kafka",
+    "PostgreSQL",
+  ],
+
+  highlights: [
+    "API Gateway integration",
+    "Service discovery",
+    "Centralized configuration",
+  ],
+
+  githubUrl: "#",
+}
 ];

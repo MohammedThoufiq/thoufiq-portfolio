@@ -1,4 +1,3 @@
-import Container from "@/components/layout/Container";
 import Link from "next/link";
 
 type ProjectCardProps = {
