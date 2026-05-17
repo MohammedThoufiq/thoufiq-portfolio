@@ -2,7 +2,7 @@ export const projects = [
   {
     id: 1,
 
-    slug: "high-throughput-notification-system",
+    slug: "High-throughput-notification-system",
 
     title: "High Throughput Notification System",
 
@@ -35,6 +35,7 @@ export const projects = [
 
   {
     id: 2,
+    slug: "Employee-management-microservices-platform",
     title: "Employee Management Microservices Platform",
 
     description:
