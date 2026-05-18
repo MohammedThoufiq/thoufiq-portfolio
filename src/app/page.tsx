@@ -6,6 +6,7 @@ import Section from "@/components/layout/Section";
 import ExperienceCard from "@/components/experience/ExperienceCard";
 import { experiences } from "@/data/experience";
 import Footer from "@/components/layout/Footer";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -62,6 +63,43 @@ export default function Home() {
             ))}
           </div>
         </Section>
+        <Section title="Featured Engineering Case Study">
+  <Link href="/case-studies/high-heap-memory-incident">
+    <div
+      className="
+        border border-white/10
+        rounded-3xl
+        p-10
+        bg-gradient-to-br
+        from-cyan-500/10
+        to-transparent
+        hover:border-cyan-400/30
+        transition-all
+      "
+    >
+      <p className="text-cyan-400 uppercase tracking-[0.3em] text-sm">
+        Production Incident
+      </p>
+
+      <h2 className="mt-6 text-4xl md:text-5xl font-bold tracking-tight leading-tight">
+        Reducing Heap Usage
+        from 90% to 25%
+      </h2>
+
+      <p className="mt-8 text-xl text-gray-400 max-w-4xl leading-9">
+        How bounded async execution,
+        pagination, query optimization,
+        and connection lifecycle fixes
+        eliminated OOM failures during
+        a 3,000 concurrent request spike.
+      </p>
+
+      <p className="mt-10 text-cyan-400 text-lg font-medium">
+        Read Full Case Study →
+      </p>
+    </div>
+  </Link>
+</Section>
       </Container>
       <Footer />
     </main>
