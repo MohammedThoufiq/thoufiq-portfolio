@@ -49,10 +49,10 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="/blogs"
+              href="/case-studies"
               className="hover:text-cyan-400 transition-colors"
             >
-              Blogs
+              Case Studies
             </Link>
 
             <Link

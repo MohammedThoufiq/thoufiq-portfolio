@@ -1,6 +1,7 @@
 import Container from "@/components/layout/Container";
 import { getBlogBySlug } from "@/lib/blog";
 import ReactMarkdown from "react-markdown";
+import CaseStudySection from "@/components/case-studies/CaseStudySection";
 
 type Props = {
   params: Promise<{
@@ -30,20 +31,6 @@ export default async function BlogDetails({
           <p className="mt-6 text-gray-500">
             {blog.frontmatter.date}
           </p>
-
-          <div
-            className="
-              mt-16
-              prose
-              prose-invert
-              prose-lg
-              max-w-none
-            "
-          >
-            <ReactMarkdown>
-              {blog.content}
-            </ReactMarkdown>
-          </div>
         </article>
       </Container>
     </main>
