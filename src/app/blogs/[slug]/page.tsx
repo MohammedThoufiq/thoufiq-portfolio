@@ -1,7 +1,5 @@
 import Container from "@/components/layout/Container";
 import { getBlogBySlug } from "@/lib/blog";
-import ReactMarkdown from "react-markdown";
-import CaseStudySection from "@/components/case-studies/CaseStudySection";
 
 type Props = {
   params: Promise<{
