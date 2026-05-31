@@ -4,6 +4,29 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
+const navLinks = [
+  {
+    label: "Home",
+    href: "/",
+  },
+  {
+    label: "Projects",
+    href: "/projects",
+  },
+  {
+    label: "Case Studies",
+    href: "/case-studies",
+  },
+  {
+    label: "Experience",
+    href: "/experience",
+  },
+  {
+    label: "Contact",
+    href: "/contact",
+  },
+];
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -21,7 +44,12 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-lg font-semibold"
+            className="
+              text-lg
+              font-semibold
+              hover:text-cyan-400
+              transition-colors
+            "
           >
             Mohammed Thoufiq
           </Link>
@@ -34,46 +62,28 @@ export default function Navbar() {
               text-sm text-gray-400
             "
           >
-            <Link
-              href="/"
-              className="hover:text-cyan-400 transition-colors"
-            >
-              Home
-            </Link>
-
-            <Link
-              href="/projects"
-              className="hover:text-cyan-400 transition-colors"
-            >
-              Projects
-            </Link>
-
-            <Link
-              href="/case-studies"
-              className="hover:text-cyan-400 transition-colors"
-            >
-              Case Studies
-            </Link>
-
-            <Link
-              href="/experience"
-              className="hover:text-cyan-400 transition-colors"
-            >
-              Experience
-            </Link>
-
-            <Link
-              href="/contact"
-              className="hover:text-cyan-400 transition-colors"
-            >
-              Contact
-            </Link>
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="
+                  hover:text-cyan-400
+                  transition-colors
+                "
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden"
+            className="
+              md:hidden
+              text-white
+            "
             onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle navigation menu"
           >
             {isOpen ? (
               <X size={24} />
@@ -83,7 +93,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Dropdown */}
+        {/* Mobile Navigation */}
         {isOpen && (
           <div
             className="
@@ -93,45 +103,19 @@ export default function Navbar() {
               text-gray-400
             "
           >
-            <Link
-              href="/"
-              onClick={() => setIsOpen(false)}
-              className="hover:text-cyan-400 transition-colors"
-            >
-              Home
-            </Link>
-
-            <Link
-              href="/projects"
-              onClick={() => setIsOpen(false)}
-              className="hover:text-cyan-400 transition-colors"
-            >
-              Projects
-            </Link>
-
-            <Link
-              href="/blogs"
-              onClick={() => setIsOpen(false)}
-              className="hover:text-cyan-400 transition-colors"
-            >
-              Blogs
-            </Link>
-
-            <Link
-              href="/#experience"
-              onClick={() => setIsOpen(false)}
-              className="hover:text-cyan-400 transition-colors"
-            >
-              Experience
-            </Link>
-
-            <Link
-              href="/#contact"
-              onClick={() => setIsOpen(false)}
-              className="hover:text-cyan-400 transition-colors"
-            >
-              Contact
-            </Link>
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="
+                  hover:text-cyan-400
+                  transition-colors
+                "
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         )}
       </div>
