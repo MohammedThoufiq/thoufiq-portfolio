@@ -30,7 +30,7 @@ export const projects = [
       "Handled high concurrent notification traffic",
     ],
 
-    githubUrl: "#",
+    githubUrl: "https://github.com/MohammedThoufiq/NotificationSystem",
   },
 
   {
@@ -50,7 +50,7 @@ export const projects = [
     "Services communicate through REST APIs and asynchronous event-driven messaging using Kafka with centralized configuration and API Gateway routing.",
 
   techStack: [
-    "Java 17",
+    "Java",
     "Spring Boot",
     "Spring Cloud",
     "Kafka",
@@ -63,6 +63,6 @@ export const projects = [
     "Centralized configuration",
   ],
 
-  githubUrl: "#",
+  githubUrl: "https://github.com/MohammedThoufiq/EmployeeManagement",
 }
 ];

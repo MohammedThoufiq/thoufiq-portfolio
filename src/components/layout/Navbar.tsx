@@ -56,14 +56,14 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="/#experience"
+              href="/experience"
               className="hover:text-cyan-400 transition-colors"
             >
               Experience
             </Link>
 
             <Link
-              href="/#contact"
+              href="/contact"
               className="hover:text-cyan-400 transition-colors"
             >
               Contact
