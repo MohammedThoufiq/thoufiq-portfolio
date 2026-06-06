@@ -4,6 +4,10 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
+import ScrollProgress from "@/components/animations/ScrollProgress";
+
+import CursorGlow from "@/components/animations/CursorGlow";
+
 export const metadata: Metadata = {
   title: "Mohammed Thoufiq | Java Backend Engineer",
 
@@ -47,6 +51,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-black text-white">
+
+        <ScrollProgress />
+
+        <CursorGlow />
 
         <Navbar />
 

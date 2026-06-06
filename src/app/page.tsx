@@ -4,79 +4,225 @@ import ProjectCard from "@/components/projects/ProjectCard";
 import Section from "@/components/layout/Section";
 import ExperienceCard from "@/components/experience/ExperienceCard";
 import { experiences } from "@/data/experience";
+import TechStack from "@/components/home/TechStack";
 import Link from "next/link";
+import AnimatedSection from "@/components/animations/AnimatedSection";
+import AnimatedButton from "@/components/animations/AnimatedButton";
+import { HeroStagger, HeroItem,} from "@/components/animations/HeroStagger";
+
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white">
       <Container>
-        <section className="py-32">
-          <div className="max-w-4xl">
-            <p className="text-cyan-400 text-sm tracking-[0.3em] uppercase">
-              Backend Engineer
-            </p>
+        <section id="home"
+  className="
+    relative
+    overflow-hidden
+    py-16
+    md:py-24
+  "
+>
+  <div
+  className="
+    absolute
+    inset-0
+    -z-10
+    opacity-[0.03]
+    pointer-events-none
+    bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)]
+    bg-[size:48px_48px]
+  "
+/>
 
-            <h1 className="mt-6 text-5xl md:text-7xl font-bold tracking-tight leading-tight">
-              Mohammed Thoufiq
-            </h1>
+  {/* Background Grid */}
 
-            <div className="mt-10 flex flex-wrap gap-4">
-  <a
-    href="/resume/MohammedThoufiq_SoftwareEngineer_Java.pdf"
-    target="_blank"
-    rel="noopener noreferrer"
+  <div
     className="
-      px-6 py-3
-      rounded-xl
-      bg-cyan-500
-      text-black
-      font-semibold
-      hover:bg-cyan-400
-      transition
+      absolute
+      inset-0
+      -z-10
+      opacity-[0.03]
+      pointer-events-none
+
+      bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)]
+
+      bg-[size:48px_48px]
     "
-  >
-    Download Resume
-  </a>
+  />
 
-  <a
-    href="https://github.com/MohammedThoufiq"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="
-      px-6 py-3
-      rounded-xl
-      border
-      border-white/10
-      hover:border-cyan-400
-      transition
-    "
-  >
-    GitHub
-  </a>
+  <HeroStagger>
 
-  <a
-    href="https://www.linkedin.com/in/mohammed-thoufiq-s/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="
-      px-6 py-3
-      rounded-xl
-      border
-      border-white/10
-      hover:border-cyan-400
-      transition
-    "
-  >
-    LinkedIn
-  </a>
-</div>
+    <div className="max-w-4xl">
 
-            <p className="mt-8 text-xl md:text-2xl text-gray-300 leading-9 md:leading-10">
-              Building scalable distributed backend systems using Java, Spring Boot, Kafka, Microservices, AWS, and Azure.
-            </p>
-          </div>
-        </section>
+      <HeroItem>
+        <p
+          className="
+            text-cyan-400
+            text-sm
+            tracking-[0.3em]
+            uppercase
+          "
+        >
+          Backend Engineer
+        </p>
+      </HeroItem>
 
+      <HeroItem>
+        <h1
+          className="
+            mt-4
+            text-5xl
+            md:text-6xl
+            lg:text-7xl
+            font-bold
+            tracking-tight
+            leading-tight
+          "
+        >
+          Mohammed Thoufiq
+        </h1>
+      </HeroItem>
+
+      <HeroItem>
+        <h2
+          className="
+            mt-6
+            text-xl
+            md:text-2xl
+            text-gray-300
+            font-medium
+          "
+        >
+          Backend Engineer • Distributed Systems • Cloud
+        </h2>
+      </HeroItem>
+
+      <HeroItem>
+        <p
+          className="
+            mt-8
+            text-lg
+            md:text-xl
+            text-gray-400
+            leading-8
+            md:leading-9
+            max-w-3xl
+          "
+        >
+          Building enterprise-scale APIs,
+          event-driven platforms,
+          and high-performance backend
+          systems using Java, Spring Boot,
+          Kafka, AWS, Azure, and modern
+          distributed architecture patterns.
+        </p>
+      </HeroItem>
+
+      <HeroItem>
+
+        <div
+          className="
+            mt-10
+            flex
+            flex-wrap
+            gap-4
+          "
+        >
+          <AnimatedButton>
+          <Link
+            href="/resume/MohammedThoufiq_SoftwareEngineer_Java.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              px-6
+              py-3
+              rounded-xl
+              bg-cyan-500
+              text-black
+              font-semibold
+
+              transition-all
+              duration-200
+
+              hover:scale-[1.03]
+              hover:bg-cyan-400
+              hover:shadow-[0_0_25px_rgba(34,211,238,0.25)]
+
+              active:scale-[0.97]
+            "
+          >
+            Download Resume
+          </Link>
+          </AnimatedButton>
+
+          <AnimatedButton delay={0.05}>
+          <Link
+            href="https://github.com/MohammedThoufiq"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              px-6
+              py-3
+              rounded-xl
+              border
+              border-white/10
+
+              transition-all
+              duration-200
+
+              hover:scale-[1.03]
+              hover:border-cyan-400
+              hover:shadow-[0_0_20px_rgba(34,211,238,0.15)]
+
+              active:scale-[0.97]
+            "
+          >
+            GitHub
+          </Link>
+          </AnimatedButton>
+
+          <AnimatedButton delay={0.1}>
+          <Link
+            href="https://www.linkedin.com/in/mohammed-thoufiq-s/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              px-6
+              py-3
+              rounded-xl
+              border
+              border-white/10
+
+              transition-all
+              duration-200
+
+              hover:scale-[1.03]
+              hover:border-cyan-400
+              hover:shadow-[0_0_20px_rgba(34,211,238,0.15)]
+
+              active:scale-[0.97]
+            "
+          >
+            LinkedIn
+          </Link>
+          </AnimatedButton>
+
+        </div>
+
+      </HeroItem>
+
+    </div>
+
+  </HeroStagger>
+
+</section>
+
+        <AnimatedSection>
+  <TechStack />
+</AnimatedSection>
+<AnimatedSection delay={0.1}>
+  <section id="projects">
         <Section title="Featured Projects">
           <div className="grid md:grid-cols-2 gap-8">
             {projects.slice(0, 2).map((project) => (
@@ -92,7 +238,7 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-10 text-center">
-  <a
+  <Link
     href="/projects"
     className="
       inline-flex
@@ -110,10 +256,14 @@ export default function Home() {
     "
   >
     View All Projects →
-  </a>
+  </Link>
 </div>
         </Section>
+        </section>
+        </AnimatedSection>
 
+        <AnimatedSection delay={0.15}>
+          <section id="experience">
         <Section title="Experience">
           <div className="grid md:grid-cols-2 gap-8">
             {experiences.slice(0, 2).map((experience) => (
@@ -129,7 +279,7 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-10 text-center">
-  <a
+  <Link
     href="/experience"
     className="
       inline-flex
@@ -147,9 +297,13 @@ export default function Home() {
     "
   >
     View Full Experience →
-  </a>
+  </Link>
 </div>
         </Section>
+        </section>
+        </AnimatedSection>
+        <AnimatedSection delay={0.2}>
+          <section id="case-studies">
         <Section title="Featured Engineering Case Study">
   <Link href="/case-studies/high-heap-memory-incident">
     <div
@@ -187,6 +341,8 @@ export default function Home() {
     </div>
   </Link>
 </Section>
+</section>
+</AnimatedSection>
       </Container>
     </main>
   );

@@ -18,16 +18,20 @@ export default function ExperienceCard({
   return (
     <div
       className="
-        relative
-        border border-white/10
-        rounded-2xl
-        p-8
-        bg-white/[0.03]
-      "
+    border border-white/10
+    rounded-2xl
+    p-8
+    bg-white/[0.03]
+    transition-all
+    duration-300
+    hover:border-cyan-400/30
+    hover:bg-white/[0.05]
+    hover:-translate-y-1
+  "
     >
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
-          <h3 className="text-3xl font-bold">
+          <h3 className="text-lg md:text-xl font-bold tracking-tight ">
             {role}
           </h3>
 
@@ -40,19 +44,6 @@ export default function ExperienceCard({
           {duration}
         </p>
       </div>
-
-      <p className="mt-8 text-lg leading-8 text-gray-400">
-        {description}
-      </p>
-
-      <ul className="mt-8 space-y-4 text-gray-400">
-        {highlights.map((highlight) => (
-          <li key={highlight}>
-            • {highlight}
-          </li>
-        ))}
-      </ul>
-
       <div className="flex flex-wrap gap-3 mt-8">
         {techStack.map((tech) => (
           <span
@@ -70,6 +61,18 @@ export default function ExperienceCard({
           </span>
         ))}
       </div>
+
+      <p className="mt-8 text-lg leading-8 text-gray-400">
+        {description}
+      </p>
+
+      <ul className="mt-8 space-y-4 text-gray-400">
+        {highlights.map((highlight) => (
+          <li key={highlight}>
+            • {highlight}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
