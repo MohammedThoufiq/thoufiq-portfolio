@@ -60,7 +60,8 @@ export default async function CaseStudyDetails({
           <h1
             className="
               text-5xl
-              md:text-7xl
+              md:text-6xl
+              lg:text-7xl
               font-bold
               tracking-tight
               leading-[1.05]
@@ -73,8 +74,8 @@ export default async function CaseStudyDetails({
           <p
             className="
               mt-10
-              text-xl
-              md:text-2xl
+              text-lg
+              md:text-xl
               text-gray-400
               leading-10
               max-w-4xl

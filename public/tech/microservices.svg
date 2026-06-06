@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 128 128"
+     width="128"
+     height="128"
+     fill="none">
+
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="128" y2="128">
+      <stop offset="0%" stop-color="#4DEEFF"/>
+      <stop offset="100%" stop-color="#00B7D8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Connections -->
+  <g stroke="url(#grad)"
+     stroke-width="3.5"
+     stroke-linecap="round">
+    <line x1="64" y1="64" x2="64" y2="28"/>
+    <line x1="64" y1="64" x2="32" y2="48"/>
+    <line x1="64" y1="64" x2="96" y2="48"/>
+    <line x1="64" y1="64" x2="40" y2="100"/>
+    <line x1="64" y1="64" x2="88" y2="100"/>
+  </g>
+
+  <!-- Service Card Component -->
+  <g fill="url(#grad)">
+
+    <!-- Top -->
+    <g transform="translate(50 12)">
+      <rect width="28" height="20" rx="4"/>
+      <rect x="4" y="5" width="4" height="4" rx="2" fill="white" opacity=".95"/>
+      <rect x="11" y="6" width="12" height="2.5" rx="1.2" fill="white" opacity=".9"/>
+      <rect x="11" y="11" width="9" height="2.5" rx="1.2" fill="white" opacity=".7"/>
+    </g>
+
+    <!-- Left -->
+    <g transform="translate(18 38)">
+      <rect width="28" height="20" rx="4"/>
+      <rect x="4" y="5" width="4" height="4" rx="2" fill="white" opacity=".95"/>
+      <rect x="11" y="6" width="12" height="2.5" rx="1.2" fill="white" opacity=".9"/>
+      <rect x="11" y="11" width="9" height="2.5" rx="1.2" fill="white" opacity=".7"/>
+    </g>
+
+    <!-- Right -->
+    <g transform="translate(82 38)">
+      <rect width="28" height="20" rx="4"/>
+      <rect x="4" y="5" width="4" height="4" rx="2" fill="white" opacity=".95"/>
+      <rect x="11" y="6" width="12" height="2.5" rx="1.2" fill="white" opacity=".9"/>
+      <rect x="11" y="11" width="9" height="2.5" rx="1.2" fill="white" opacity=".7"/>
+    </g>
+
+    <!-- Bottom Left -->
+    <g transform="translate(26 92)">
+      <rect width="28" height="20" rx="4"/>
+      <rect x="4" y="5" width="4" height="4" rx="2" fill="white" opacity=".95"/>
+      <rect x="11" y="6" width="12" height="2.5" rx="1.2" fill="white" opacity=".9"/>
+      <rect x="11" y="11" width="9" height="2.5" rx="1.2" fill="white" opacity=".7"/>
+    </g>
+
+    <!-- Bottom Right -->
+    <g transform="translate(74 92)">
+      <rect width="28" height="20" rx="4"/>
+      <rect x="4" y="5" width="4" height="4" rx="2" fill="white" opacity=".95"/>
+      <rect x="11" y="6" width="12" height="2.5" rx="1.2" fill="white" opacity=".9"/>
+      <rect x="11" y="11" width="9" height="2.5" rx="1.2" fill="white" opacity=".7"/>
+    </g>
+
+  </g>
+
+  <!-- Central Gateway -->
+  <circle cx="64" cy="64" r="11"
+          fill="url(#grad)"/>
+
+  <!-- Gateway arrows -->
+  <path d="M60 64h8M65 59l5 5-5 5"
+        stroke="white"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+</svg>
