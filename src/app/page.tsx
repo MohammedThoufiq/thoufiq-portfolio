@@ -9,6 +9,7 @@ import Link from "next/link";
 import AnimatedSection from "@/components/animations/AnimatedSection";
 import AnimatedButton from "@/components/animations/AnimatedButton";
 import { HeroStagger, HeroItem,} from "@/components/animations/HeroStagger";
+//import Magnet from "@/components/animations/Magnet";
 
 
 export default function Home() {
@@ -207,6 +208,30 @@ export default function Home() {
             LinkedIn
           </Link>
           </AnimatedButton>
+
+          <AnimatedButton delay={0.15}>
+    <Link
+      href="/contact"
+      className="
+              px-6
+              py-3
+              rounded-xl
+              border
+              border-white/10
+
+              transition-all
+              duration-200
+
+              hover:scale-[1.03]
+              hover:border-cyan-400
+              hover:shadow-[0_0_20px_rgba(34,211,238,0.15)]
+
+              active:scale-[0.97]
+            "
+    >
+      Let&apos;s Connect
+    </Link>
+  </AnimatedButton>
 
         </div>
 
