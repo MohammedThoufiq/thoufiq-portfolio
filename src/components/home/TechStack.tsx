@@ -40,7 +40,7 @@ export default function TechStack() {
               name={tech.name}
               icon={tech.icon}
               category={tech.category}
-              url={tech.url}
+              //url={tech.url}
             />
           ))}
         </div>

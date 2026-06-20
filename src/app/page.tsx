@@ -10,11 +10,12 @@ import AnimatedSection from "@/components/animations/AnimatedSection";
 import AnimatedButton from "@/components/animations/AnimatedButton";
 import { HeroStagger, HeroItem,} from "@/components/animations/HeroStagger";
 //import Magnet from "@/components/animations/Magnet";
+import BorderGlow from "@/components/animations/BorderGlow";
 
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-black text-white pt-28">
       <Container>
         <section id="home"
   className="
@@ -121,121 +122,115 @@ export default function Home() {
       </HeroItem>
 
       <HeroItem>
+  <div
+    className="
+      mt-10
+      grid
+      grid-cols-2
+      gap-4
+      sm:grid-cols-4
+    "
+  >
+    <AnimatedButton>
+      <Link
+        href="/resume/MohammedThoufiq_SoftwareEngineer_Java.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="
+          w-full
+          flex
+          items-center
+          justify-center
+          px-6
+          py-3
+          rounded-xl
+          bg-cyan-500
+          text-black
+          font-semibold
+          transition-all
+          duration-200
+          hover:bg-cyan-400
+          hover:shadow-[0_0_25px_rgba(34,211,238,0.25)]
+        "
+      >
+        Resume
+      </Link>
+    </AnimatedButton>
 
-        <div
-          className="
-            mt-10
-            flex
-            flex-wrap
-            gap-4
-          "
-        >
-          <AnimatedButton>
-          <Link
-            href="/resume/MohammedThoufiq_SoftwareEngineer_Java.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="
-              px-6
-              py-3
-              rounded-xl
-              bg-cyan-500
-              text-black
-              font-semibold
+    <AnimatedButton delay={0.05}>
+      <Link
+        href="https://github.com/MohammedThoufiq"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="
+          w-full
+          flex
+          items-center
+          justify-center
+          px-6
+          py-3
+          rounded-xl
+          border
+          border-white/10
+          transition-all
+          duration-200
+          hover:border-cyan-400
+          hover:shadow-[0_0_20px_rgba(34,211,238,0.15)]
+        "
+      >
+        GitHub
+      </Link>
+    </AnimatedButton>
 
-              transition-all
-              duration-200
+    <AnimatedButton delay={0.1}>
+      <Link
+        href="https://www.linkedin.com/in/mohammed-thoufiq-s/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="
+          w-full
+          flex
+          items-center
+          justify-center
+          px-6
+          py-3
+          rounded-xl
+          border
+          border-white/10
+          transition-all
+          duration-200
+          hover:border-cyan-400
+          hover:shadow-[0_0_20px_rgba(34,211,238,0.15)]
+        "
+      >
+        LinkedIn
+      </Link>
+    </AnimatedButton>
 
-              hover:scale-[1.03]
-              hover:bg-cyan-400
-              hover:shadow-[0_0_25px_rgba(34,211,238,0.25)]
-
-              active:scale-[0.97]
-            "
-          >
-            Download Resume
-          </Link>
-          </AnimatedButton>
-
-          <AnimatedButton delay={0.05}>
-          <Link
-            href="https://github.com/MohammedThoufiq"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="
-              px-6
-              py-3
-              rounded-xl
-              border
-              border-white/10
-
-              transition-all
-              duration-200
-
-              hover:scale-[1.03]
-              hover:border-cyan-400
-              hover:shadow-[0_0_20px_rgba(34,211,238,0.15)]
-
-              active:scale-[0.97]
-            "
-          >
-            GitHub
-          </Link>
-          </AnimatedButton>
-
-          <AnimatedButton delay={0.1}>
-          <Link
-            href="https://www.linkedin.com/in/mohammed-thoufiq-s/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="
-              px-6
-              py-3
-              rounded-xl
-              border
-              border-white/10
-
-              transition-all
-              duration-200
-
-              hover:scale-[1.03]
-              hover:border-cyan-400
-              hover:shadow-[0_0_20px_rgba(34,211,238,0.15)]
-
-              active:scale-[0.97]
-            "
-          >
-            LinkedIn
-          </Link>
-          </AnimatedButton>
-
-          <AnimatedButton delay={0.15}>
-    <Link
-      href="/contact"
-      className="
-              px-6
-              py-3
-              rounded-xl
-              border
-              border-white/10
-
-              transition-all
-              duration-200
-
-              hover:scale-[1.03]
-              hover:border-cyan-400
-              hover:shadow-[0_0_20px_rgba(34,211,238,0.15)]
-
-              active:scale-[0.97]
-            "
-    >
-      Let&apos;s Connect
-    </Link>
-  </AnimatedButton>
-
-        </div>
-
-      </HeroItem>
+    <AnimatedButton delay={0.15}>
+      <Link
+        href="/contact"
+        className="
+          w-full
+          flex
+          items-center
+          justify-center
+          px-6
+          py-3
+          rounded-xl
+          border
+          border-white/10
+          transition-all
+          duration-200
+          hover:border-cyan-400
+          hover:shadow-[0_0_20px_rgba(34,211,238,0.15)]
+        "
+      >
+        Let&apos;s Connect
+      </Link>
+    </AnimatedButton>
+  </div>
+</HeroItem>
 
     </div>
 
@@ -331,18 +326,28 @@ export default function Home() {
           <section id="case-studies">
         <Section title="Featured Engineering Case Study">
   <Link href="/case-studies/high-heap-memory-incident">
-    <div
-      className="
-        border border-white/10
-        rounded-3xl
-        p-10
-        bg-gradient-to-br
-        from-cyan-500/10
-        to-transparent
-        hover:border-cyan-400/30
-        transition-all
-      "
-    >
+    <BorderGlow
+  className="
+    w-full
+    overflow-hidden
+    rounded-3xl
+    p-4
+    md:p-6
+    text-cyan-400
+    transition-transform
+    duration-300
+    hover:-translate-y-1
+  "
+  edgeSensitivity={30}
+  glowColor="34 211 238"
+  backgroundColor="#0A0F14"
+  borderRadius={28}
+  glowRadius={35}
+  glowIntensity={1}
+  coneSpread={25}
+  animated={false}
+  colors={["#22d3ee", "#06b6d4", "#67e8f9"]}
+>
       <p className="text-cyan-400 uppercase tracking-[0.3em] text-sm">
         Production Incident
       </p>
@@ -363,7 +368,7 @@ export default function Home() {
       <p className="mt-10 text-cyan-400 text-lg font-medium">
         Read Full Case Study →
       </p>
-    </div>
+    </BorderGlow>
   </Link>
 </Section>
 </section>

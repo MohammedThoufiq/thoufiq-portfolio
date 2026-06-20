@@ -1,13 +1,7 @@
 "use client";
 
-import {
-  motion,
-  useReducedMotion,
-} from "framer-motion";
-
+import { motion, cubicBezier } from "framer-motion";
 import { ReactNode } from "react";
-
-import { cubicBezier } from "framer-motion";
 
 type Props = {
   children: ReactNode;
@@ -15,7 +9,6 @@ type Props = {
 
 const container = {
   hidden: {},
-
   show: {
     transition: {
       staggerChildren: 0.12,
@@ -29,12 +22,10 @@ const item = {
     y: 25,
     filter: "blur(8px)",
   },
-
   show: {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-
     transition: {
       duration: 0.6,
       ease: cubicBezier(0.22, 1, 0.36, 1),
@@ -42,16 +33,7 @@ const item = {
   },
 };
 
-export function HeroStagger({
-  children,
-}: Props) {
-  const reduceMotion =
-    useReducedMotion();
-
-  if (reduceMotion) {
-    return <>{children}</>;
-  }
-
+export function HeroStagger({ children }: Props) {
   return (
     <motion.div
       variants={container}
@@ -63,9 +45,7 @@ export function HeroStagger({
   );
 }
 
-export function HeroItem({
-  children,
-}: Props) {
+export function HeroItem({ children }: Props) {
   return (
     <motion.div variants={item}>
       {children}
