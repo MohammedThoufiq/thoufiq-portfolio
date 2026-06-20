@@ -78,27 +78,31 @@ export default function CursorGlow() {
   }, []);
 
   return (
-    <div
-      ref={glowRef}
-      className="
-        fixed
-        left-0
-        top-0
-        w-[300px]
-        h-[300px]
-        rounded-full
+  <div
+    ref={glowRef}
+    className="
+      fixed
+      left-0
+      top-0
 
-        bg-cyan-400/10
+      w-[300px]
+      h-[300px]
 
-        blur-[120px]
+      rounded-full
 
-        pointer-events-none
+      pointer-events-none
 
-        z-0
+      z-0
 
-        hidden
-        md:block
-      "
-    />
-  );
+      hidden
+      md:block
+    "
+    style={{
+      background:
+        "radial-gradient(circle, rgba(34,211,238,0.18) 0%, rgba(34,211,238,0.08) 35%, transparent 75%)",
+      filter: "blur(60px)",
+      willChange: "transform",
+    }}
+  />
+);
 }

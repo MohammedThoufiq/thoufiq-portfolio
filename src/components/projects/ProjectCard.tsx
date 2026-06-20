@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BorderGlow from "../animations/BorderGlow";
 
 type ProjectCardProps = {
   slug: string;
@@ -18,18 +19,27 @@ export default function ProjectCard({
   githubUrl
 }: ProjectCardProps) {
   return (
-    <div
+    <BorderGlow
   className="
-    border border-white/10
-    rounded-2xl
-    p-8
-    bg-white/[0.03]
-    transition-all
+    w-full
+    overflow-hidden
+    rounded-3xl
+    p-4
+    md:p-6
+    text-cyan-400
+    transition-transform
     duration-300
-    hover:border-cyan-400/30
-    hover:bg-white/[0.05]
     hover:-translate-y-1
   "
+  edgeSensitivity={30}
+  glowColor="34 211 238"
+  backgroundColor="#0A0F14"
+  borderRadius={28}
+  glowRadius={35}
+  glowIntensity={1}
+  coneSpread={25}
+  animated={false}
+  colors={["#22d3ee", "#06b6d4", "#67e8f9"]}
 >
       <Link href={`/projects/${slug}`}>
   <h3 className="text-lg md:text-xl font-bold tracking-tight hover:text-cyan-400 transition-colors">
@@ -80,6 +90,6 @@ export default function ProjectCard({
 >
   View Project →
 </a>
-    </div>
+    </BorderGlow>
   );
 }

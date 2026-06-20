@@ -4,7 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+} from "framer-motion";
+
+import GooeyNav from "@/components/animations/GooeyNav";
 
 const navLinks = [
   {
@@ -75,11 +80,15 @@ export default function Navbar() {
         duration: 0.25,
       }}
       className={`
-        sticky
-        top-0
-        z-50
-        border-b
-        transition-colors
+        fixed
+  top-0
+  left-0
+  right-0
+  z-[9999]
+  w-full
+  border-b
+  transition-colors
+
         ${
           scrolled
             ? "border-white/10"
@@ -89,91 +98,53 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between py-5">
-
           {/* Logo */}
 
           <Link
             href="/"
             className="
-              text-lg
+              text-base
+              md:text-lg
               font-semibold
               transition-colors
               hover:text-cyan-400
+              shrink-0
             "
           >
             Mohammed Thoufiq
           </Link>
 
-          {/* Desktop */}
+          {/* Desktop Gooey Navigation */}
 
           <div
-            className="
-              hidden
-              md:flex
-              items-center
-              gap-8
-              text-sm
-            "
-          >
-            {navLinks.map(
-              (link) => (
-                <Link
-                  key={
-                    link.href
-                  }
-                  href={
-                    link.href
-                  }
-                  className={`
-                    relative
-                    transition-colors
-                    duration-300
+  className="
+    hidden
+    md:flex
+    items-center
+    ml-auto
+  "
+>
+  <GooeyNav
+    items={navLinks}
+    particleCount={15}
+    particleDistances={[90, 10]}
+    particleR={100}
+    animationTime={600}
+    timeVariance={350}
+    colors={[1, 2, 3, 2, 1]}
+  />
+</div>
 
-                    ${
-                      pathname ===
-                      link.href
-                        ? "text-cyan-400"
-                        : "text-gray-400"
-                    }
-
-                    hover:text-cyan-400
-                  `}
-                >
-                  {
-                    link.label
-                  }
-
-                  {pathname ===
-                    link.href && (
-                    <motion.div
-                      layoutId="navbar-indicator"
-                      className="
-                        absolute
-                        -bottom-2
-                        left-0
-                        right-0
-                        h-[2px]
-                        rounded-full
-                        bg-cyan-400
-                      "
-                      transition={{
-                        type: "spring",
-                        stiffness: 500,
-                        damping: 35,
-                      }}
-                    />
-                  )}
-                </Link>
-              )
-            )}
-          </div>
-
-          {/* Mobile Button */}
+          {/* Mobile Toggle */}
 
           <button
-            className="
-              md:hidden
-            "
+            aria-label={
+              isOpen
+                ? "Close menu"
+                : "Open menu"
+            }
+            aria-expanded={isOpen}
+            className="md:hidden"
             onClick={() =>
               setIsOpen(
                 !isOpen
@@ -181,77 +152,87 @@ export default function Navbar() {
             }
           >
             {isOpen ? (
-              <X
-                size={
-                  24
-                }
-              />
+              <X size={24} />
             ) : (
-              <Menu
-                size={
-                  24
-                }
-              />
+              <Menu size={24} />
             )}
           </button>
         </div>
 
         {/* Mobile Menu */}
 
-        {isOpen && (
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: -10,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            exit={{
-              opacity: 0,
-            }}
-            className="
-              md:hidden
-              flex
-              flex-col
-              gap-5
-              pb-6
-            "
-          >
-            {navLinks.map(
-              (link) => (
-                <Link
-                  key={
-                    link.href
-                  }
-                  href={
-                    link.href
-                  }
-                  onClick={() =>
-                    setIsOpen(
-                      false
-                    )
-                  }
-                  className={`
-                    transition-colors
-
-                    ${
-                      pathname ===
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: -10,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              exit={{
+                opacity: 0,
+                y: -10,
+              }}
+              transition={{
+                duration: 0.2,
+              }}
+              className="
+                md:hidden
+                flex
+                flex-col
+                gap-3
+                pb-6
+              "
+            >
+              {navLinks.map(
+                (link) => (
+                  <Link
+                    key={
                       link.href
-                        ? "text-cyan-400"
-                        : "text-gray-400"
                     }
-                  `}
-                >
-                  {
-                    link.label
-                  }
-                </Link>
-              )
-            )}
-          </motion.div>
-        )}
+                    href={
+                      link.href
+                    }
+                    onClick={() =>
+                      setIsOpen(
+                        false
+                      )
+                    }
+                    className={`
+                      px-4
+                      py-3
+
+                      rounded-xl
+
+                      transition-all
+
+                      ${
+                        pathname ===
+                        link.href
+                          ? `
+                            bg-cyan-400
+                            text-black
+                          `
+                          : `
+                            text-gray-400
+                            hover:text-cyan-400
+                            hover:bg-white/5
+                          `
+                      }
+                    `}
+                  >
+                    {
+                      link.label
+                    }
+                  </Link>
+                )
+              )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.nav>
   );
