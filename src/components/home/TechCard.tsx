@@ -8,7 +8,7 @@ type Props = {
   name: string;
   icon: string;
   category: string;
-  url: string;
+  //url: string;
 };
 
 export default function TechCard({
@@ -19,11 +19,11 @@ export default function TechCard({
 }: Props) {
   return (
     <BorderGlow
-      {/* <Link
-        href={url}
-        target="_blank"
-        rel="noopener noreferrer"
-      > */}
+      //  <Link
+      //   href={url}
+      //   target="_blank"
+      //   rel="noopener noreferrer"
+      // > 
   className="
     w-full
     overflow-hidden
