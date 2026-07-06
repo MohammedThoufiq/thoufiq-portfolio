@@ -1,8 +1,50 @@
 @import "tailwindcss";
 
+/* Class-based dark mode: `.dark` on <html> activates dark tokens. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Light theme (default) */
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
+  --c-page: #f5f6f8; /* subtle off-white so white cards pop */
+  --c-fg: #0f172a; /* headings / strong text */
+  --c-body: #334155; /* body text */
+  --c-muted: #64748b; /* secondary text */
+  --c-faint: #94a3b8; /* tertiary text */
+  --c-surface: rgba(15, 23, 42, 0.03); /* card fill */
+  --c-surface-strong: #ffffff; /* solid card (BorderGlow bg) */
+  --c-hairline: rgba(15, 23, 42, 0.1); /* borders */
+  --c-accent: #0891b2; /* cyan-600 — readable on light */
+
+  --background: var(--c-page);
+  --foreground: var(--c-fg);
+}
+
+/* Dark theme */
+.dark {
+  --c-page: #000000;
+  --c-fg: #ffffff;
+  --c-body: #d1d5db;
+  --c-muted: #9ca3af;
+  --c-faint: #6b7280;
+  --c-surface: rgba(255, 255, 255, 0.03);
+  --c-surface-strong: #0c1219;
+  --c-hairline: rgba(255, 255, 255, 0.1);
+  --c-accent: #22d3ee; /* cyan-400 */
+}
+
+/* Expose tokens as Tailwind color utilities: bg-page, text-fg,
+   text-body, text-muted, text-faint, bg-surface, border-hairline,
+   text-accent, etc. */
+@theme inline {
+  --color-page: var(--c-page);
+  --color-fg: var(--c-fg);
+  --color-body: var(--c-body);
+  --color-muted: var(--c-muted);
+  --color-faint: var(--c-faint);
+  --color-surface: var(--c-surface);
+  --color-surface-strong: var(--c-surface-strong);
+  --color-hairline: var(--c-hairline);
+  --color-accent: var(--c-accent);
 }
 
 html {
@@ -10,21 +52,40 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--c-page);
+  color: var(--c-body);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+}
+
+/* Print / "Save as PDF": hide the site chrome and show only the
+   ATS-friendly resume document on a clean white page. */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  nav,
+  footer {
+    display: none !important;
+  }
+
+  .print-resume {
+    box-shadow: none !important;
+  }
+
+  @page {
+    margin: 12mm;
   }
 }

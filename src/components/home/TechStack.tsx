@@ -10,7 +10,7 @@ export default function TechStack() {
 
           <p
             className="
-              text-cyan-400
+              text-accent
               uppercase
               tracking-[0.4em]
               text-sm
@@ -23,9 +23,9 @@ export default function TechStack() {
             Technologies I Build With
           </h2>
 
-          <div className="w-24 h-[3px] bg-white/40 mx-auto mt-6 rounded-full" />
+          <div className="w-24 h-[3px] bg-fg/30 mx-auto mt-6 rounded-full" />
 
-          <p className="mt-8 text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="mt-8 text-xl text-muted max-w-3xl mx-auto">
             Production technologies used for building scalable backend
             systems, distributed architectures, cloud integrations,
             and event-driven platforms.

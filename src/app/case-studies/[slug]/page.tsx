@@ -21,7 +21,7 @@ export default async function CaseStudyDetails({
 
   if (!study) {
     return (
-      <main className="min-h-screen bg-black text-white">
+      <main className="min-h-screen bg-page text-fg">
         <Container>
           <div className="py-32">
             Case study not found
@@ -32,7 +32,7 @@ export default async function CaseStudyDetails({
   }
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-page text-fg">
       <Container>
         <article className="py-28 max-w-5xl mx-auto">
 
@@ -65,7 +65,7 @@ export default async function CaseStudyDetails({
               font-bold
               tracking-tight
               leading-[1.05]
-              text-white
+              text-fg
             "
           >
             {study.title}
@@ -76,7 +76,7 @@ export default async function CaseStudyDetails({
               mt-10
               text-lg
               md:text-xl
-              text-gray-400
+              text-muted
               leading-10
               max-w-4xl
             "

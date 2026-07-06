@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+import GlowCard from "@/components/ui/GlowCard";
+
 export default function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -76,16 +78,8 @@ throw new Error(
 }
 
   return (
-    <div
-      className="
-        rounded-3xl
-        border
-        border-white/10
-        p-8
-        bg-white/[0.03]
-      "
-    >
-      <h2 className="text-3xl font-bold">
+    <GlowCard className="p-8">
+      <h2 className="text-3xl font-bold text-fg">
         Send a Message
       </h2>
 
@@ -104,9 +98,9 @@ throw new Error(
           className="
             w-full
             rounded-xl
-            bg-black
+            bg-page
             border
-            border-white/10
+            border-hairline
             p-4
             focus:outline-none
             focus:border-cyan-500
@@ -124,9 +118,9 @@ throw new Error(
           className="
             w-full
             rounded-xl
-            bg-black
+            bg-page
             border
-            border-white/10
+            border-hairline
             p-4
             focus:outline-none
             focus:border-cyan-500
@@ -144,9 +138,9 @@ throw new Error(
           className="
             w-full
             rounded-xl
-            bg-black
+            bg-page
             border
-            border-white/10
+            border-hairline
             p-4
             focus:outline-none
             focus:border-cyan-500
@@ -164,9 +158,9 @@ throw new Error(
           className="
             w-full
             rounded-xl
-            bg-black
+            bg-page
             border
-            border-white/10
+            border-hairline
             p-4
             focus:outline-none
             focus:border-cyan-500
@@ -237,6 +231,6 @@ throw new Error(
   </div>
 )}
       </form>
-    </div>
+    </GlowCard>
   );
 }

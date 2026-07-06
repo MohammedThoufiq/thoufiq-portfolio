@@ -6,10 +6,10 @@ import { projects } from "@/data/projects";
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-page text-fg">
       <Container>
         <section className="py-28">
-          <p className="text-cyan-400 uppercase tracking-[0.3em] text-sm">
+          <p className="text-accent uppercase tracking-[0.3em] text-sm">
             Portfolio
           </p>
 
@@ -17,7 +17,7 @@ export default function ProjectsPage() {
             Projects
           </h1>
 
-          <p className="mt-8 text-xl text-gray-400 leading-9 max-w-3xl">
+          <p className="mt-8 text-xl text-muted leading-9 max-w-3xl">
             Scalable backend systems, distributed architectures,
             resiliency engineering, and production-focused
             implementations.

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 
 import Container from "@/components/layout/Container";
+import GlowCard from "@/components/ui/GlowCard";
 
 import { projectDetails } from "@/data/projectDetails";
 
@@ -20,7 +21,7 @@ export default async function ProjectDetails({
   }
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-page text-fg">
       <Container>
         <article className="max-w-5xl mx-auto py-28">
 
@@ -59,7 +60,7 @@ export default async function ProjectDetails({
             className="
               mt-8
               text-xl
-              text-gray-400
+              text-muted
               leading-9
               max-w-4xl
             "
@@ -76,17 +77,8 @@ export default async function ProjectDetails({
   "
 >
   {project.metrics?.map((metric) => (
-    <div
-      key={metric.label}
-      className="
-        p-6
-        rounded-2xl
-        border
-        border-white/10
-        bg-white/[0.03]
-      "
-    >
-      <p className="text-gray-500 text-sm">
+    <GlowCard key={metric.label} className="p-6">
+      <p className="text-faint text-sm">
         {metric.label}
       </p>
 
@@ -95,12 +87,12 @@ export default async function ProjectDetails({
           mt-4
           text-3xl
           font-bold
-          text-cyan-400
+          text-accent
         "
       >
         {metric.after}
       </p>
-    </div>
+    </GlowCard>
   ))}
 </div>
 
@@ -108,7 +100,7 @@ export default async function ProjectDetails({
           <section className="mt-24">
             <p
               className="
-                text-cyan-400
+                text-accent
                 uppercase
                 tracking-[0.3em]
                 text-sm
@@ -125,7 +117,7 @@ export default async function ProjectDetails({
               className="
                 mt-8
                 text-lg
-                text-gray-300
+                text-body
                 leading-9
               "
             >
@@ -137,7 +129,7 @@ export default async function ProjectDetails({
           <section className="mt-24">
             <p
               className="
-                text-cyan-400
+                text-accent
                 uppercase
                 tracking-[0.3em]
                 text-sm
@@ -159,7 +151,7 @@ export default async function ProjectDetails({
           <section className="mt-24">
             <p
               className="
-                text-cyan-400
+                text-accent
                 uppercase
                 tracking-[0.3em]
                 text-sm
@@ -176,7 +168,7 @@ export default async function ProjectDetails({
               className="
                 mt-8
                 text-lg
-                text-gray-300
+                text-body
                 leading-9
                 whitespace-pre-line
               "
@@ -189,7 +181,7 @@ export default async function ProjectDetails({
           <section className="mt-24">
             <p
               className="
-                text-cyan-400
+                text-accent
                 uppercase
                 tracking-[0.3em]
                 text-sm
@@ -206,7 +198,7 @@ export default async function ProjectDetails({
               className="
                 mt-8
                 text-lg
-                text-gray-300
+                text-body
                 leading-9
                 whitespace-pre-line
               "

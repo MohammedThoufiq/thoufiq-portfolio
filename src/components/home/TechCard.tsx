@@ -30,14 +30,14 @@ export default function TechCard({
     rounded-3xl
     p-4
     md:p-6
-    text-cyan-400
+    text-accent
     transition-transform
     duration-300
     hover:-translate-y-1
   "
   edgeSensitivity={30}
   glowColor="34 211 238"
-  backgroundColor="#0A0F14"
+  backgroundColor="var(--c-surface-strong)"
   borderRadius={28}
   glowRadius={35}
   glowIntensity={1}
@@ -105,7 +105,7 @@ export default function TechCard({
             mt-1
             text-[11px]
             md:text-sm
-            text-gray-400
+            text-muted
             leading-snug
             break-words
             max-w-full

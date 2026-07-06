@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import GlowCard from "@/components/ui/GlowCard";
+
 type ArchitectureDiagramProps = {
   title: string;
   description: string;
@@ -13,25 +15,18 @@ export default function ArchitectureDiagram({
 }: ArchitectureDiagramProps) {
   return (
     <section className="py-20">
-      <div
-        className="
-          border border-white/10
-          rounded-3xl
-          overflow-hidden
-          bg-white/[0.03]
-        "
-      >
+      <GlowCard>
         <div className="p-8 md:p-12">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
             {title}
           </h2>
 
-          <p className="mt-6 text-lg text-gray-400 leading-8 max-w-4xl">
+          <p className="mt-6 text-lg text-muted leading-8 max-w-4xl">
             {description}
           </p>
         </div>
 
-        <div className="border-t border-white/10">
+        <div className="border-t border-hairline">
           <Image
             src={image}
             alt={title}
@@ -40,7 +35,7 @@ export default function ArchitectureDiagram({
             className="w-full h-auto"
           />
         </div>
-      </div>
+      </GlowCard>
     </section>
   );
 }

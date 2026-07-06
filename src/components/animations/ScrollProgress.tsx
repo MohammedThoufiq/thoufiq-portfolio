@@ -22,6 +22,7 @@ export default function ScrollProgress() {
         origin-left
         z-[100]
         bg-cyan-400
+        print:hidden
       "
       style={{
         scaleX,

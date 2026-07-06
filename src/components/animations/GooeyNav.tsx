@@ -201,7 +201,7 @@ const activeIndex = Math.max(
             z-index: 0;
           }
           .effect.text {
-            color: white;
+            color: var(--c-fg);
             transition: color 0.3s ease;
           }
           .effect.text.active {
@@ -215,7 +215,7 @@ const activeIndex = Math.max(
             position: absolute;
             inset: -10px;
             z-index: -2;
-            background: black;
+            background: var(--c-page);
           }
           .effect.filter::after {
   content: "";
@@ -344,14 +344,14 @@ const activeIndex = Math.max(
     m-0
   "
             style={{
-              color: 'white',
+              color: 'var(--c-fg)',
               textShadow: '0 1px 1px hsl(205deg 30% 10% / 0.2)'
             }}
           >
             {items.map((item, index) => (
               <li
                 key={index}
-                className={`rounded-full relative cursor-pointer transition-[background-color_color_box-shadow] duration-300 ease shadow-[0_0_0.5px_1.5px_transparent] text-white ${
+                className={`rounded-full relative cursor-pointer transition-[background-color_color_box-shadow] duration-300 ease shadow-[0_0_0.5px_1.5px_transparent] text-fg ${
                   activeIndex === index ? 'active' : ''
                 }`}
               >

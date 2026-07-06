@@ -17,7 +17,7 @@ export default function CaseStudySection({
         {eyebrow && (
           <p
             className="
-              text-cyan-400
+              text-accent
               uppercase
               tracking-[0.3em]
               text-sm
@@ -37,7 +37,7 @@ export default function CaseStudySection({
             font-bold
             tracking-tight
             leading-tight
-            text-white
+            text-fg
           "
         >
           {title}
@@ -61,7 +61,7 @@ export default function CaseStudySection({
             mt-10
             text-xl
             leading-10
-            text-gray-300
+            text-body
             space-y-6
           "
         >

@@ -15,10 +15,10 @@ export default async function BlogDetails({
   const blog = getBlogBySlug(slug);
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-page text-fg">
       <Container>
         <article className="py-28 max-w-4xl">
-          <p className="text-cyan-400 uppercase tracking-[0.3em] text-sm">
+          <p className="text-accent uppercase tracking-[0.3em] text-sm">
             Technical Blog
           </p>
 
@@ -26,7 +26,7 @@ export default async function BlogDetails({
             {blog.frontmatter.title}
           </h1>
 
-          <p className="mt-6 text-gray-500">
+          <p className="mt-6 text-faint">
             {blog.frontmatter.date}
           </p>
         </article>

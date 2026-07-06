@@ -1,19 +1,14 @@
+import ResumeActions from "@/components/resume/ResumeActions";
+import GlowCard from "@/components/ui/GlowCard";
+import { profile } from "@/data/resume";
+
 export default function ContactSection() {
   return (
     <section className="py-24">
-      <div
-        className="
-          rounded-3xl
-          border
-          border-white/10
-          bg-white/[0.03]
-          p-10
-          md:p-16
-        "
-      >
+      <GlowCard className="p-10 md:p-16">
         <p
           className="
-            text-cyan-400
+            text-accent
             uppercase
             tracking-[0.3em]
             text-sm
@@ -36,7 +31,7 @@ export default function ContactSection() {
         <p
           className="
             mt-6
-            text-gray-400
+            text-muted
             max-w-3xl
             leading-8
           "
@@ -46,34 +41,18 @@ export default function ContactSection() {
           and cloud-native opportunities.
         </p>
 
-        <div className="mt-10 flex flex-wrap gap-4">
+        <div className="mt-10 flex flex-wrap items-center gap-4">
+
+          <ResumeActions />
 
           <a
-            href="/resume/MohammedThoufiq_SoftwareEngineer_Java.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="
-              px-6
-              py-3
-              rounded-xl
-              bg-cyan-500
-              text-black
-              font-semibold
-              hover:bg-cyan-400
-              transition
-            "
-          >
-            Download Resume
-          </a>
-
-          <a
-            href="mailto:your-email@gmail.com"
+            href={`mailto:${profile.email}`}
             className="
               px-6
               py-3
               rounded-xl
               border
-              border-white/10
+              border-hairline
               hover:border-cyan-400
               transition
             "
@@ -90,7 +69,7 @@ export default function ContactSection() {
               py-3
               rounded-xl
               border
-              border-white/10
+              border-hairline
               hover:border-cyan-400
               transition
             "
@@ -107,7 +86,7 @@ export default function ContactSection() {
               py-3
               rounded-xl
               border
-              border-white/10
+              border-hairline
               hover:border-cyan-400
               transition
             "
@@ -120,14 +99,14 @@ export default function ContactSection() {
         <div
           className="
             mt-10
-            text-gray-500
+            text-faint
             text-sm
           "
         >
           Based in India • Open to Remote, GCC,
           and International Backend Engineering Opportunities
         </div>
-      </div>
+      </GlowCard>
     </section>
   );
 }

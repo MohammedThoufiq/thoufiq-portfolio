@@ -49,8 +49,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="bg-black text-white">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Set the theme before paint to avoid a flash of the wrong mode.
+            Defaults to dark; honors a stored choice, then system preference. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');var d=t?t==='dark':!window.matchMedia('(prefers-color-scheme: light)').matches;var e=document.documentElement;e.classList.toggle('dark',d);e.style.colorScheme=d?'dark':'light';}catch(e){document.documentElement.classList.add('dark');}})();`,
+          }}
+        />
+      </head>
+      <body className="bg-page text-body">
 
         <ScrollProgress />
 

@@ -1,3 +1,5 @@
+import GlowCard from "@/components/ui/GlowCard";
+
 const metrics = [
   {
     label: "Heap Usage",
@@ -29,16 +31,8 @@ export default function MetricsGrid() {
     <section className="py-20">
       <div className="grid md:grid-cols-4 gap-6">
         {metrics.map((metric) => (
-          <div
-            key={metric.label}
-            className="
-              border border-white/10
-              rounded-2xl
-              p-8
-              bg-white/[0.03]
-            "
-          >
-            <p className="text-gray-500 text-sm">
+          <GlowCard key={metric.label} className="p-8">
+            <p className="text-faint text-sm">
               {metric.label}
             </p>
 
@@ -47,11 +41,11 @@ export default function MetricsGrid() {
                 {metric.before}
               </p>
 
-              <p className="text-3xl font-bold text-cyan-400 mt-2">
+              <p className="text-3xl font-bold text-accent mt-2">
                 → {metric.after}
               </p>
             </div>
-          </div>
+          </GlowCard>
         ))}
       </div>
     </section>

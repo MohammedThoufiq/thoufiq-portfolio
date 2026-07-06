@@ -96,6 +96,7 @@ export default function CursorGlow() {
 
       hidden
       md:block
+      print:!hidden
     "
     style={{
       background:

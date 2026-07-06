@@ -4,12 +4,12 @@ import { experiences } from "@/data/experience";
 
 export default function ExperiencePage() {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-page text-fg">
       <Container>
 
         {/* HERO */}
         <section className="py-28">
-          <p className="text-cyan-400 uppercase tracking-[0.3em] text-sm">
+          <p className="text-accent uppercase tracking-[0.3em] text-sm">
             Experience
           </p>
 
@@ -17,7 +17,7 @@ export default function ExperiencePage() {
             Building Reliable Backend Systems
           </h1>
 
-          <p className="mt-8 text-xl text-gray-400 max-w-4xl leading-9">
+          <p className="mt-8 text-xl text-muted max-w-4xl leading-9">
             Java Backend Engineer with experience designing,
             developing, supporting, and optimizing
             enterprise-scale backend platforms.
@@ -32,9 +32,11 @@ export default function ExperiencePage() {
               <ExperienceCard
                 key={experience.id}
                 company={experience.company}
+                client={experience.client}
                 role={experience.role}
                 duration={experience.duration}
-                description={experience.description}
+                summary={experience.summary}
+                metric={experience.metric}
                 highlights={experience.highlights}
                 techStack={experience.techStack}
               />

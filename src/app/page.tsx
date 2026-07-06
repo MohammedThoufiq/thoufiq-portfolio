@@ -11,11 +11,14 @@ import AnimatedButton from "@/components/animations/AnimatedButton";
 import { HeroStagger, HeroItem,} from "@/components/animations/HeroStagger";
 //import Magnet from "@/components/animations/Magnet";
 import BorderGlow from "@/components/animations/BorderGlow";
+import ResumeActions from "@/components/resume/ResumeActions";
+import Highlights from "@/components/home/Highlights";
+import Certifications from "@/components/home/Certifications";
 
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white pt-28">
+    <main className="min-h-screen bg-page text-fg pt-28">
       <Container>
         <section id="home"
   className="
@@ -25,33 +28,9 @@ export default function Home() {
     md:py-24
   "
 >
-  <div
-  className="
-    absolute
-    inset-0
-    -z-10
-    opacity-[0.03]
-    pointer-events-none
-    bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)]
-    bg-[size:48px_48px]
-  "
-/>
-
-  {/* Background Grid */}
-
-  <div
-    className="
-      absolute
-      inset-0
-      -z-10
-      opacity-[0.03]
-      pointer-events-none
-
-      bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)]
-
-      bg-[size:48px_48px]
-    "
-  />
+  {/* Elegant, minimal ambient glow (no grid noise) */}
+  <div className="pointer-events-none absolute -top-32 -left-24 -z-10 h-80 w-80 rounded-full bg-cyan-500/10 blur-[120px]" />
+  <div className="pointer-events-none absolute -top-24 right-0 -z-10 h-72 w-72 rounded-full bg-cyan-400/5 blur-[120px]" />
 
   <HeroStagger>
 
@@ -60,13 +39,13 @@ export default function Home() {
       <HeroItem>
         <p
           className="
-            text-cyan-400
+            text-accent
             text-sm
             tracking-[0.3em]
             uppercase
           "
         >
-          Backend Engineer
+          Java Backend Engineer
         </p>
       </HeroItem>
 
@@ -92,11 +71,11 @@ export default function Home() {
             mt-6
             text-xl
             md:text-2xl
-            text-gray-300
+            text-body
             font-medium
           "
         >
-          Backend Engineer • Distributed Systems • Cloud
+          Java Backend Engineer • Microservices • Distributed Systems • Cloud
         </h2>
       </HeroItem>
 
@@ -106,18 +85,18 @@ export default function Home() {
             mt-8
             text-lg
             md:text-xl
-            text-gray-400
+            text-muted
             leading-8
             md:leading-9
             max-w-3xl
           "
         >
-          Building enterprise-scale APIs,
-          event-driven platforms,
-          and high-performance backend
-          systems using Java, Spring Boot,
-          Kafka, AWS, Azure, and modern
-          distributed architecture patterns.
+          Java Backend Engineer with 3.5+ years of experience
+          building enterprise-scale microservices, event-driven
+          platforms, and high-performance APIs — 25+ microservices,
+          11 batch applications, and 80–100 APIs processing over
+          150K requests/hour using Java 21, Spring Boot 3, Kafka,
+          Azure, and AWS.
         </p>
       </HeroItem>
 
@@ -131,31 +110,7 @@ export default function Home() {
       sm:grid-cols-4
     "
   >
-    <AnimatedButton>
-      <Link
-        href="/resume/MohammedThoufiq_SoftwareEngineer_Java.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="
-          w-full
-          flex
-          items-center
-          justify-center
-          px-6
-          py-3
-          rounded-xl
-          bg-cyan-500
-          text-black
-          font-semibold
-          transition-all
-          duration-200
-          hover:bg-cyan-400
-          hover:shadow-[0_0_25px_rgba(34,211,238,0.25)]
-        "
-      >
-        Resume
-      </Link>
-    </AnimatedButton>
+    <ResumeActions fullWidth />
 
     <AnimatedButton delay={0.05}>
       <Link
@@ -171,7 +126,7 @@ export default function Home() {
           py-3
           rounded-xl
           border
-          border-white/10
+          border-hairline
           transition-all
           duration-200
           hover:border-cyan-400
@@ -196,7 +151,7 @@ export default function Home() {
           py-3
           rounded-xl
           border
-          border-white/10
+          border-hairline
           transition-all
           duration-200
           hover:border-cyan-400
@@ -219,7 +174,7 @@ export default function Home() {
           py-3
           rounded-xl
           border
-          border-white/10
+          border-hairline
           transition-all
           duration-200
           hover:border-cyan-400
@@ -239,6 +194,10 @@ export default function Home() {
 </section>
 
         <AnimatedSection>
+  <Highlights />
+</AnimatedSection>
+
+        <AnimatedSection delay={0.05}>
   <TechStack />
 </AnimatedSection>
 <AnimatedSection delay={0.1}>
@@ -269,7 +228,7 @@ export default function Home() {
       rounded-xl
       border
       border-cyan-500/20
-      text-cyan-400
+      text-accent
       hover:border-cyan-400
       hover:text-cyan-300
       transition-all
@@ -290,9 +249,11 @@ export default function Home() {
               <ExperienceCard
                 key={experience.id}
                 company={experience.company}
+                client={experience.client}
                 role={experience.role}
                 duration={experience.duration}
-                description={experience.description}
+                summary={experience.summary}
+                metric={experience.metric}
                 highlights={experience.highlights}
                 techStack={experience.techStack}
               />
@@ -310,7 +271,7 @@ export default function Home() {
       rounded-xl
       border
       border-cyan-500/20
-      text-cyan-400
+      text-accent
       hover:border-cyan-400
       hover:text-cyan-300
       transition-all
@@ -322,6 +283,11 @@ export default function Home() {
         </Section>
         </section>
         </AnimatedSection>
+
+        <AnimatedSection delay={0.15}>
+          <Certifications />
+        </AnimatedSection>
+
         <AnimatedSection delay={0.2}>
           <section id="case-studies">
         <Section title="Featured Engineering Case Study">
@@ -333,14 +299,14 @@ export default function Home() {
     rounded-3xl
     p-4
     md:p-6
-    text-cyan-400
+    text-accent
     transition-transform
     duration-300
     hover:-translate-y-1
   "
   edgeSensitivity={30}
   glowColor="34 211 238"
-  backgroundColor="#0A0F14"
+  backgroundColor="var(--c-surface-strong)"
   borderRadius={28}
   glowRadius={35}
   glowIntensity={1}
@@ -348,7 +314,7 @@ export default function Home() {
   animated={false}
   colors={["#22d3ee", "#06b6d4", "#67e8f9"]}
 >
-      <p className="text-cyan-400 uppercase tracking-[0.3em] text-sm">
+      <p className="text-accent uppercase tracking-[0.3em] text-sm">
         Production Incident
       </p>
 
@@ -357,7 +323,7 @@ export default function Home() {
         from 90% to 25%
       </h2>
 
-      <p className="mt-8 text-xl text-gray-400 max-w-4xl leading-9">
+      <p className="mt-8 text-xl text-muted max-w-4xl leading-9">
         How bounded async execution,
         pagination, query optimization,
         and connection lifecycle fixes
@@ -365,7 +331,7 @@ export default function Home() {
         a 3,000 concurrent request spike.
       </p>
 
-      <p className="mt-10 text-cyan-400 text-lg font-medium">
+      <p className="mt-10 text-accent text-lg font-medium">
         Read Full Case Study →
       </p>
     </BorderGlow>

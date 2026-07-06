@@ -1,12 +1,12 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10">
+    <footer className="border-t border-hairline">
       <div className="max-w-6xl mx-auto px-4 md:px-4 md:px-6 py-8 flex justify-between flex-wrap gap-4">
-        <p className="text-gray-500 text-sm">
+        <p className="text-faint text-sm">
           © 2026 Mohammed Thoufiq
         </p>
 
-        <div className="flex gap-6 text-sm text-gray-400">
+        <div className="flex gap-6 text-sm text-muted">
           <a
             href="https://github.com/MohammedThoufiq"
             target="_blank"
