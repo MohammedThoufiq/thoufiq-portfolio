@@ -87,7 +87,7 @@ function SectionNav() {
   }, []);
 
   return (
-    <nav className="sticky top-[64px] z-40 -mx-5 mb-6 border-y border-hairline bg-page/80 px-5 backdrop-blur-xl">
+    <nav className="sticky top-[101px] z-50 -mx-5 mb-6 border-y border-hairline bg-page/90 px-5 backdrop-blur-xl">
       <div className="mx-auto flex max-w-5xl items-center gap-2 overflow-x-auto py-3">
         <div className="flex items-center gap-2 pr-2">
           <div className="h-7 w-7 shrink-0 overflow-hidden rounded-full ring-1 ring-hairline">
@@ -357,7 +357,7 @@ export default function ResumeView() {
               <GlowCard className="p-8">
                 <div className="grid items-center gap-8 md:grid-cols-[auto_1fr]">
                   <div className="mx-auto h-28 w-28 shrink-0 overflow-hidden rounded-2xl ring-1 ring-hairline md:h-32 md:w-32">
-                    <ProfileImage variant="mono" className="h-full w-full" />
+                    <ProfileImage variant="circle" className="h-full w-full" />
                   </div>
                   <div>
                     <p className="text-base text-body md:text-lg">

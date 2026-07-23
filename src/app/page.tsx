@@ -12,8 +12,11 @@ import { HeroStagger, HeroItem,} from "@/components/animations/HeroStagger";
 //import Magnet from "@/components/animations/Magnet";
 import BorderGlow from "@/components/animations/BorderGlow";
 import ResumeActions from "@/components/resume/ResumeActions";
+import ProfileImage from "@/components/resume/ProfileImage";
 import Highlights from "@/components/home/Highlights";
 import Certifications from "@/components/home/Certifications";
+import { profile } from "@/data/resume";
+import { MapPin, Mail, Phone } from "lucide-react";
 
 
 export default function Home() {
@@ -34,158 +37,143 @@ export default function Home() {
 
   <HeroStagger>
 
-    <div className="max-w-4xl">
+    <div className="grid items-center gap-10 md:grid-cols-[1.3fr_1fr]">
 
+      {/* Left: intro */}
+      <div>
+
+        <HeroItem>
+          <p className="text-accent text-sm tracking-[0.3em] uppercase">
+            {profile.role}
+          </p>
+        </HeroItem>
+
+        <HeroItem>
+          <h1 className="mt-4 text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+            {profile.name}
+          </h1>
+        </HeroItem>
+
+        <HeroItem>
+          <h2 className="mt-6 text-xl md:text-2xl text-body font-medium">
+            {profile.title}
+          </h2>
+        </HeroItem>
+
+        <HeroItem>
+          <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted">
+            <span className="inline-flex items-center gap-1.5">
+              <MapPin size={14} className="text-accent" />
+              {profile.location}
+            </span>
+            <a
+              href={`mailto:${profile.email}`}
+              className="inline-flex items-center gap-1.5 hover:text-fg"
+            >
+              <Mail size={14} className="text-accent" />
+              {profile.email}
+            </a>
+            <a
+              href={`tel:${profile.phoneHref}`}
+              className="inline-flex items-center gap-1.5 hover:text-fg"
+            >
+              <Phone size={14} className="text-accent" />
+              {profile.phone}
+            </a>
+          </div>
+        </HeroItem>
+
+        <HeroItem>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <ResumeActions />
+
+            <AnimatedButton>
+              <Link
+                href={profile.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  inline-flex
+                  items-center
+                  justify-center
+                  px-6
+                  py-3
+                  rounded-xl
+                  border
+                  border-hairline
+                  transition-all
+                  duration-200
+                  hover:border-cyan-400
+                  hover:shadow-[0_0_20px_rgba(34,211,238,0.15)]
+                "
+              >
+                GitHub
+              </Link>
+            </AnimatedButton>
+
+            <AnimatedButton>
+              <Link
+                href={profile.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  inline-flex
+                  items-center
+                  justify-center
+                  px-6
+                  py-3
+                  rounded-xl
+                  border
+                  border-hairline
+                  transition-all
+                  duration-200
+                  hover:border-cyan-400
+                  hover:shadow-[0_0_20px_rgba(34,211,238,0.15)]
+                "
+              >
+                LinkedIn
+              </Link>
+            </AnimatedButton>
+
+            <AnimatedButton>
+              <Link
+                href="/contact"
+                className="
+                  inline-flex
+                  items-center
+                  justify-center
+                  px-6
+                  py-3
+                  rounded-xl
+                  border
+                  border-hairline
+                  transition-all
+                  duration-200
+                  hover:border-cyan-400
+                  hover:shadow-[0_0_20px_rgba(34,211,238,0.15)]
+                "
+              >
+                Let&apos;s Connect
+              </Link>
+            </AnimatedButton>
+          </div>
+        </HeroItem>
+
+      </div>
+
+      {/* Right: portrait */}
       <HeroItem>
-        <p
-          className="
-            text-accent
-            text-sm
-            tracking-[0.3em]
-            uppercase
-          "
-        >
-          Java Backend Engineer
-        </p>
+        <div className="relative mx-auto w-full max-w-[300px]">
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-hairline">
+            <ProfileImage variant="hero" priority className="h-full w-full" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <div className="absolute inset-x-3 bottom-3 rounded-xl border border-white/15 bg-black/30 px-3 py-2 backdrop-blur-md">
+              <p className="text-sm font-semibold text-white">{profile.name}</p>
+              <p className="text-xs text-cyan-300">{profile.role}</p>
+            </div>
+          </div>
+        </div>
       </HeroItem>
-
-      <HeroItem>
-        <h1
-          className="
-            mt-4
-            text-5xl
-            md:text-6xl
-            lg:text-7xl
-            font-bold
-            tracking-tight
-            leading-tight
-          "
-        >
-          Mohammed Thoufiq
-        </h1>
-      </HeroItem>
-
-      <HeroItem>
-        <h2
-          className="
-            mt-6
-            text-xl
-            md:text-2xl
-            text-body
-            font-medium
-          "
-        >
-          Java Backend Engineer • Microservices • Distributed Systems • Cloud
-        </h2>
-      </HeroItem>
-
-      <HeroItem>
-        <p
-          className="
-            mt-8
-            text-lg
-            md:text-xl
-            text-muted
-            leading-8
-            md:leading-9
-            max-w-3xl
-          "
-        >
-          Java Backend Engineer with 3.5+ years of experience
-          building enterprise-scale microservices, event-driven
-          platforms, and high-performance APIs — 25+ microservices,
-          11 batch applications, and 80–100 APIs processing over
-          150K requests/hour using Java 21, Spring Boot 3, Kafka,
-          Azure, and AWS.
-        </p>
-      </HeroItem>
-
-      <HeroItem>
-  <div
-    className="
-      mt-10
-      grid
-      grid-cols-2
-      gap-4
-      sm:grid-cols-4
-    "
-  >
-    <ResumeActions fullWidth />
-
-    <AnimatedButton delay={0.05}>
-      <Link
-        href="https://github.com/MohammedThoufiq"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="
-          w-full
-          flex
-          items-center
-          justify-center
-          px-6
-          py-3
-          rounded-xl
-          border
-          border-hairline
-          transition-all
-          duration-200
-          hover:border-cyan-400
-          hover:shadow-[0_0_20px_rgba(34,211,238,0.15)]
-        "
-      >
-        GitHub
-      </Link>
-    </AnimatedButton>
-
-    <AnimatedButton delay={0.1}>
-      <Link
-        href="https://www.linkedin.com/in/mohammed-thoufiq-s/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="
-          w-full
-          flex
-          items-center
-          justify-center
-          px-6
-          py-3
-          rounded-xl
-          border
-          border-hairline
-          transition-all
-          duration-200
-          hover:border-cyan-400
-          hover:shadow-[0_0_20px_rgba(34,211,238,0.15)]
-        "
-      >
-        LinkedIn
-      </Link>
-    </AnimatedButton>
-
-    <AnimatedButton delay={0.15}>
-      <Link
-        href="/contact"
-        className="
-          w-full
-          flex
-          items-center
-          justify-center
-          px-6
-          py-3
-          rounded-xl
-          border
-          border-hairline
-          transition-all
-          duration-200
-          hover:border-cyan-400
-          hover:shadow-[0_0_20px_rgba(34,211,238,0.15)]
-        "
-      >
-        Let&apos;s Connect
-      </Link>
-    </AnimatedButton>
-  </div>
-</HeroItem>
 
     </div>
 
@@ -200,48 +188,7 @@ export default function Home() {
         <AnimatedSection delay={0.05}>
   <TechStack />
 </AnimatedSection>
-<AnimatedSection delay={0.1}>
-  <section id="projects">
-        <Section title="Featured Projects">
-          <div className="grid md:grid-cols-2 gap-8">
-            {projects.slice(0, 2).map((project) => (
-              <ProjectCard
-                key={project.id}
-                slug={project.slug}
-                title={project.title}
-                description={project.shortDescription}
-                techStack={project.techStack}
-                highlights={project.highlights}
-                githubUrl={project.githubUrl}
-              />
-            ))}
-          </div>
-          <div className="mt-10 text-center">
-  <Link
-    href="/projects"
-    className="
-      inline-flex
-      items-center
-      gap-2
-      px-6
-      py-3
-      rounded-xl
-      border
-      border-cyan-500/20
-      text-accent
-      hover:border-cyan-400
-      hover:text-cyan-300
-      transition-all
-    "
-  >
-    View All Projects →
-  </Link>
-</div>
-        </Section>
-        </section>
-        </AnimatedSection>
-
-        <AnimatedSection delay={0.15}>
+        <AnimatedSection delay={0.1}>
           <section id="experience">
         <Section title="Experience">
           <div className="grid md:grid-cols-2 gap-8">
@@ -278,6 +225,46 @@ export default function Home() {
     "
   >
     View Full Experience →
+  </Link>
+</div>
+        </Section>
+        </section>
+        </AnimatedSection>
+        <AnimatedSection delay={0.15}>
+  <section id="projects">
+        <Section title="Featured Projects">
+          <div className="grid md:grid-cols-2 gap-8">
+            {projects.slice(0, 2).map((project) => (
+              <ProjectCard
+                key={project.id}
+                slug={project.slug}
+                title={project.title}
+                description={project.shortDescription}
+                techStack={project.techStack}
+                highlights={project.highlights}
+                githubUrl={project.githubUrl}
+              />
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+  <Link
+    href="/projects"
+    className="
+      inline-flex
+      items-center
+      gap-2
+      px-6
+      py-3
+      rounded-xl
+      border
+      border-cyan-500/20
+      text-accent
+      hover:border-cyan-400
+      hover:text-cyan-300
+      transition-all
+    "
+  >
+    View All Projects →
   </Link>
 </div>
         </Section>

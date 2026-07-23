@@ -10,7 +10,7 @@ import Logo from "@/components/layout/Logo";
  * then each treatment falls back to the branded monogram mark in-theme.
  */
 
-const SRC = "/profile.jpg";
+const SRC = "/profile_light.png";
 
 type Variant = "hero" | "circle" | "glass" | "mono";
 
